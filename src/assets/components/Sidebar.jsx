@@ -13,67 +13,56 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
-// Navigation items configuration
 const NAVIGATION_ITEMS = [
   {
     to: "/portal/dashboard",
     label: "Dashboard",
     icon: FaThLarge,
-    color: "#f26cf9",
   },
   {
     to: "/portal/bookings",
     label: "Bookings",
     icon: FaBook,
-    color: "#37437d",
   },
   {
     to: "/portal/invoices",
     label: "Invoices",
     icon: FaFileInvoiceDollar,
-    color: "#37437d",
   },
   {
     to: "/portal/inbox",
     label: "Inbox",
     icon: FaEnvelope,
-    color: "#37437d",
   },
   {
     to: "/portal/calendar",
     label: "Calendar",
     icon: FaCalendarAlt,
-    color: "#37437d",
   },
   {
     to: "/portal/events",
     label: "Events",
     icon: FaUsers,
-    color: "#37437d",
   },
   {
     to: "/portal/financial",
-    label: "Financial",
+    label: "Financials",
     icon: FaDollarSign,
-    color: "#37437d",
   },
   {
     to: "/portal/gallery",
     label: "Gallery",
     icon: FaImage,
-    color: "#37437d",
   },
   {
     to: "/portal/feedback",
     label: "Feedback",
     icon: FaStar,
-    color: "#37437d",
   },
 ];
 
-// Navigation Item Component
 const NavigationItem = ({ item, onClick }) => {
-  const { to, label, icon: Icon, color } = item;
+  const { to, label, icon: Icon } = item;
 
   return (
     <NavLink
@@ -84,14 +73,13 @@ const NavigationItem = ({ item, onClick }) => {
       onClick={onClick}
     >
       <span className="sidebar__nav-icon">
-        <Icon style={{ color: color || "inherit", fontSize: "20px" }} />
+        <Icon />
       </span>
       <span className="sidebar__nav-label">{label}</span>
     </NavLink>
   );
 };
 
-// Logo Component
 const Logo = ({ onClick }) => (
   <div className="sidebar__logo-container">
     <NavLink to="/portal/dashboard" className="sidebar__logo" onClick={onClick}>
@@ -99,13 +87,12 @@ const Logo = ({ onClick }) => (
         src="/logos/VentixeLogo.svg"
         alt="Ventixe logo"
         className="sidebar__logo-icon"
-        style={{ width: "2.5rem", height: "2.5rem" }}
       />
+      <span>Ventixe</span>
     </NavLink>
   </div>
 );
 
-// Promo Banner Component
 const PromoBanner = () => (
   <div className="sidebar__promo">
     <div className="sidebar__promo-card">
@@ -116,18 +103,17 @@ const PromoBanner = () => (
       />
       <p className="sidebar__promo-title">
         Experience enhanced features and a smoother interface with the latest
-        update
+        version of Ventixe
       </p>
       <button className="sidebar__promo-button">Try New Version</button>
     </div>
   </div>
 );
 
-// Sign Out Button Component
 const SignOutButton = ({ onClick }) => (
   <button className="sidebar__signout-button" onClick={onClick}>
     <span className="sidebar__signout-icon">
-      <FaSignOutAlt style={{ fontSize: "18px" }} />
+      <FaSignOutAlt />
     </span>
     <span className="sidebar__signout-text">Sign Out</span>
   </button>
@@ -141,7 +127,6 @@ const Sidebar = ({ isOpen, onClose }) => {
   };
 
   const handleSignOut = () => {
-    // Add sign out logic here
     console.log("Signing out...");
     handleNavClick();
   };
