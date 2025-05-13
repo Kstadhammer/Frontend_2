@@ -90,6 +90,182 @@ body {
   }
 }
 
+/* Header */
+.header {
+  grid-area: header;
+  background-color: var(--gray-10);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.header__title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary-100);
+}
+
+.header__title p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--gray-70);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header__search input {
+  width: 280px;
+  height: 2.5rem;
+  padding: 0 2.5rem 0 1rem;
+  background-color: var(--gray-20);
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.header__search-icon {
+  position: absolute;
+  right: 1rem;
+  color: var(--gray-70);
+  font-size: 1.125rem;
+}
+
+.header__icon-button {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--secondary-100);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.header__icon-button:hover {
+  background-color: var(--secondary-90);
+}
+
+.header__notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-100);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.header__profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--cool-gray-10);
+  padding: 0.25rem;
+  padding-right: 1rem;
+  border-radius: 2rem;
+}
+
+.header__profile-pic {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--primary-30);
+  border-radius: 50%;
+}
+
+.header__profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.header__profile-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-100);
+}
+
+.header__profile-role {
+  font-size: 0.75rem;
+  color: var(--gray-70);
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--gray-10);
+  border-radius: 1rem;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.footer__copyright {
+  font-size: 0.875rem;
+  color: var(--gray-70);
+  margin: 0;
+}
+
+.footer__links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: var(--gray-70);
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.footer__link:hover {
+  opacity: 1;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer__social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.footer__social-icon:hover {
+  opacity: 1;
+}
+
 /* Sidebar */
 .sidebar {
   height: 100%;
@@ -263,5 +439,3 @@ body {
   font-weight: 500;
   opacity: 0.6;
 }
-
-/* Rest of your existing CSS below */
