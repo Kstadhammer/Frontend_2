@@ -1,34 +1,79 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
-  FiLogOut,
-  FiHome,
-  FiCalendar,
-  FiDollarSign,
-  FiMessageSquare,
-  FiUsers,
-  FiImage,
-  FiInbox,
-  FiFileText,
-  FiBook,
-} from "react-icons/fi";
+  FaThLarge,
+  FaCalendarAlt,
+  FaDollarSign,
+  FaStar,
+  FaUsers,
+  FaImage,
+  FaEnvelope,
+  FaFileInvoiceDollar,
+  FaBook,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 // Navigation items configuration
 const NAVIGATION_ITEMS = [
-  { to: "/portal/dashboard", label: "Dashboard", icon: FiHome },
-  { to: "/portal/bookings", label: "Bookings", icon: FiBook },
-  { to: "/portal/invoices", label: "Invoices", icon: FiFileText },
-  { to: "/portal/inbox", label: "Inbox", icon: FiInbox },
-  { to: "/portal/calendar", label: "Calendar", icon: FiCalendar },
-  { to: "/portal/events", label: "Events", icon: FiUsers },
-  { to: "/portal/financial", label: "Financial", icon: FiDollarSign },
-  { to: "/portal/gallery", label: "Gallery", icon: FiImage },
-  { to: "/portal/feedback", label: "Feedback", icon: FiMessageSquare },
+  {
+    to: "/portal/dashboard",
+    label: "Dashboard",
+    icon: FaThLarge,
+    color: "#f26cf9",
+  },
+  {
+    to: "/portal/bookings",
+    label: "Bookings",
+    icon: FaBook,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/invoices",
+    label: "Invoices",
+    icon: FaFileInvoiceDollar,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/inbox",
+    label: "Inbox",
+    icon: FaEnvelope,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/calendar",
+    label: "Calendar",
+    icon: FaCalendarAlt,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/events",
+    label: "Events",
+    icon: FaUsers,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/financial",
+    label: "Financial",
+    icon: FaDollarSign,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/gallery",
+    label: "Gallery",
+    icon: FaImage,
+    color: "#37437d",
+  },
+  {
+    to: "/portal/feedback",
+    label: "Feedback",
+    icon: FaStar,
+    color: "#37437d",
+  },
 ];
 
 // Navigation Item Component
 const NavigationItem = ({ item, onClick }) => {
-  const { to, label, icon: Icon } = item;
+  const { to, label, icon: Icon, color } = item;
 
   return (
     <NavLink
@@ -39,7 +84,7 @@ const NavigationItem = ({ item, onClick }) => {
       onClick={onClick}
     >
       <span className="sidebar__nav-icon">
-        <Icon />
+        <Icon style={{ color: color || "inherit", fontSize: "20px" }} />
       </span>
       <span className="sidebar__nav-label">{label}</span>
     </NavLink>
@@ -54,8 +99,8 @@ const Logo = ({ onClick }) => (
         src="/logos/VentixeLogo.svg"
         alt="Ventixe logo"
         className="sidebar__logo-icon"
+        style={{ width: "2.5rem", height: "2.5rem" }}
       />
-      <span className="sidebar__logo-text">Ventixe</span>
     </NavLink>
   </div>
 );
@@ -65,7 +110,7 @@ const PromoBanner = () => (
   <div className="sidebar__promo">
     <div className="sidebar__promo-card">
       <img
-        src="/icons/PromoBannerSideIcon.svg"
+        src="/icons/PhoneIcon.svg"
         alt="New Features"
         className="sidebar__promo-image"
       />
@@ -82,15 +127,13 @@ const PromoBanner = () => (
 const SignOutButton = ({ onClick }) => (
   <button className="sidebar__signout-button" onClick={onClick}>
     <span className="sidebar__signout-icon">
-      <FiLogOut />
+      <FaSignOutAlt style={{ fontSize: "18px" }} />
     </span>
     <span className="sidebar__signout-text">Sign Out</span>
   </button>
 );
 
 const Sidebar = ({ isOpen, onClose }) => {
-  const location = useLocation();
-
   const handleNavClick = () => {
     if (typeof onClose === "function") {
       onClose();
