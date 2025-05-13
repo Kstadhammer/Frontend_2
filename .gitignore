@@ -22,3 +22,30 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Coverage directory used by testing tools
+coverage
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+# Storybook
+storybook-static
+
+# Build artifacts
+build/
+
+# Misc
+.cache
+.dccache
+.temp
+.tmp
+.history
