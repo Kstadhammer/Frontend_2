@@ -154,11 +154,13 @@ body {
 
 .portal-wrapper {
   display: grid;
-  gap: 0;
+  gap: 1rem;
   min-height: 100vh;
+  padding: 1rem;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
   grid-template-areas: "nav" "main" "footer";
+  background-color: var(--gray-10);
 
   @media (width >= 768px) {
     grid-template-columns: 250px 1fr;
@@ -176,14 +178,15 @@ nav {
   grid-area: nav;
   background-color: var(--cool-gray-10);
   padding: 0;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 header {
   grid-area: header;
-  background-color: var(--gray-10);
-  border-radius: 0;
+  background-color: var(--gray-20);
+  border-radius: 1rem;
   padding: 1rem 2rem;
-  border-bottom: 1px solid var(--gray-30);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -192,16 +195,15 @@ header {
 main {
   grid-area: main;
   background-color: var(--gray-10);
-  border-radius: 0;
+  border-radius: 1rem;
   padding: 2rem;
 }
 
 footer {
   grid-area: footer;
   background-color: var(--gray-10);
-  border-radius: 0;
+  border-radius: 1rem;
   padding: 1rem 2rem;
-  border-top: 1px solid var(--gray-30);
 }
 
 /* Footer */
@@ -261,6 +263,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background-color: var(--gray-20);
+  border-radius: 1rem;
 }
 
 .header__logo {
@@ -303,11 +307,12 @@ footer {
   width: 280px;
   height: 2.5rem;
   padding: 0 2.5rem 0 1rem;
-  background-color: var(--gray-20);
+  background-color: var(--gray-10);
   border-radius: 1.5rem;
   border: none;
   outline: none;
   font-size: 0.875rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .header__search-icon {
@@ -335,6 +340,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header__icon-button:hover {
@@ -408,11 +414,7 @@ footer {
   flex-direction: column;
   padding: 1.5rem 0 0;
   width: 100%;
-  border-right: 1px solid var(--gray-30);
-}
-
-.sidebar--open {
-  /* Styles for when sidebar is open on mobile */
+  border-radius: 1rem;
 }
 
 .sidebar__logo-container {
@@ -431,21 +433,20 @@ footer {
 }
 
 .sidebar__logo-icon {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   object-fit: contain;
 }
 
 .sidebar__logo-text {
-  font-weight: 600;
-  color: var(--secondary-100);
+  display: none;
 }
 
 .sidebar__nav {
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.75rem;
 }
 
 .sidebar__nav a {
@@ -464,6 +465,10 @@ footer {
   font-weight: 500;
   background: none;
   border-left: none;
+}
+
+.sidebar__nav-item--active .sidebar__nav-icon {
+  color: var(--primary-100) !important;
 }
 
 .sidebar__nav a:hover {
@@ -486,8 +491,9 @@ footer {
   height: 1.25rem;
 }
 
-.sidebar__nav-item--active .sidebar__nav-icon {
-  color: inherit;
+.sidebar__nav-icon img {
+  width: 20px;
+  height: 20px;
 }
 
 .sidebar__nav-label {
@@ -519,8 +525,8 @@ footer {
 }
 
 .sidebar__promo-image {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 0.5rem;
 }
 
